@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'jmphospitals/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+</head>
+{% block content %}
+<body>
+<div class="text-center"><h1>Our Department</h1></div>
+<hr>
+
+{% for i in dept %}
+<div class="mx-auto w-50 bg-success text-center text-white p-5 my-3 border-warning rounded">
+    <h1>{{ i.dep_name }}</h1>
+    <p>{{ i.dep_description }}</p>
+</div>
+{% endfor %}
+
+</body>
+{% endblock %}
+</html>
