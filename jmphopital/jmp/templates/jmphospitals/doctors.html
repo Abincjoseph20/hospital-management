@@ -8,7 +8,22 @@
 </head>
 {% block content %}
 <body>
-<h1>doctors</h1>
+
+
+<div class="continer text-center">
+
+{% for i in doctors %}
+    <div class="card text-center mx-3 my-3" style="width: 18rem; display:inline-block">
+  <img src="{{ i.doc_image.url }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ i.doc_name }}</h5>
+    <p class="card-text">{{ i.doc_spec }} department</p>
+      <h6>{{ i.dep_name }}</h6>
+
+  </div>
+</div>
+{% endfor %}
+    </div>
 </body>
 {% endblock %}
 </html>

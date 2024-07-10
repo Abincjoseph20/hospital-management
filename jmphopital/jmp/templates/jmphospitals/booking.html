@@ -4,10 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Title{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-{% block content %}
 <body>
-<h1>booking</h1>
-</body>
+{% block content %}
+
+<h1 class="text-center">Make an appoinment </h1>
+<hr>
+<div class="container w-50 text-center my-5">
+    <div class="form-group">
+<form action="">
+    {{ form.as_p }}
+    <button type="submit" value="submit">submit</button>
+</form>
+</div>
+
 {% endblock %}
+
+</body>
 </html>

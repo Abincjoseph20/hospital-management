@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Departments
+from .models import Departments,Doctors
+from .forms import BookingForms
 # Create your views here.
 def home(request):
     return render(request,'jmphospitals/home.html')
@@ -9,11 +10,18 @@ def about(request):
 
 
 def booking(request):
-    return render(request,'jmphospitals/booking.html')
+    form = BookingForms()
+    dict_form = {
+        'form':form
+    }
+    return render(request,'jmphospitals/booking.html',dict_form)
 
 
 def doctors(request):
-    return render(request,'jmphospitals/doctors.html')
+    dict_doc = {
+        'doctors':Doctors.objects.all()
+    }
+    return render(request,'jmphospitals/doctors.html',dict_doc)
 
 
 def department(request):
