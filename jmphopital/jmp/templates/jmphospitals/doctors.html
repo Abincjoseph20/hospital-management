@@ -1,30 +1,21 @@
-<!DOCTYPE html>
 {% extends 'jmphospitals/base.html' %}
+{% block title %}Title{% endblock %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Title{% endblock %}</title>
-</head>
 {% block content %}
-<body>
-
 
 <div class="continer text-center">
-
-{% for i in doctors %}
-    <div class="card text-center mx-3 my-3" style="width: 18rem; display:inline-block">
-  <img src="{{ i.doc_image.url }}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{ i.doc_name }}</h5>
-    <p class="card-text">{{ i.doc_spec }} department</p>
-      <h6>{{ i.dep_name }}</h6>
-
-  </div>
-</div>
-{% endfor %}
+    {% for i in doctors %}
+        <div class="card text-center mx-4 my-3" style="width: 18rem; display:inline-block">
+        <a href="#">
+          <img src="{{ i.doc_image.url }}" style=" width:200px ; height:200px" >
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">{{ i.doc_name }}</h5>
+          <h5 class="card-text text-muted">{{ i.doc_spec }} department</h5>
+            <h6>{{ i.dep_name }}</h6>
+        </div>
     </div>
-</body>
+    {% endfor %}
+</div>
+
 {% endblock %}
-</html>
-</html>

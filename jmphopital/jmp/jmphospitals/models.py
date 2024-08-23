@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -25,3 +26,15 @@ class Booking(models.Model):
     doc_name=models.ForeignKey(Doctors,on_delete=models.CASCADE)
     booking_date=models.DateField()
     booked_on=models.DateField(auto_now=True) #booking time storing
+
+
+# class Patients(models.Model):
+#     user = models.ForeignKey(User,on_delete=models.CASCADE)
+#     name = models.CharField(max_length=100)
+#     locality = models.CharField(max_length=200)
+#     city = models.CharField(max_length=100)
+#     mobile = models.IntegerField(default=0)
+#     zipcode = models.IntegerField()
+#     state = models.CharField(max_length=100)
+#     def __str__(self):
+#         return self.name

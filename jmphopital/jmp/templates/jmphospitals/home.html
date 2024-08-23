@@ -1,13 +1,9 @@
-<!DOCTYPE html>
 {% extends 'jmphospitals/base.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Title{% endblock %}</title>
-</head>
-{% block content %}
-<body>
+{% block title %}Title{% endblock %}
+
+
+{% block banner %}
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -29,28 +25,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+{% endblock banner %}
 
-
-
-
-
-<!--    <div class="continer text-center bg-secondary">-->
-
-<!--{% for i in Product %}-->
-
-<!--<div class="card text-center mx-3 my-3" style="width: 18rem; display:inline-block  ">-->
-<!--    <a href="{% url 'details' id=i.pro_id %}"><img src="{{ i.pro_image.url }}" style=" width:200px ; height:200px" ></a>-->
-<!--  <div class="card-body">-->
-<!--    <h5 class="card-title">{{ i.pro_name }}</h5>-->
-<!--    <h5 class="card-text text-muted">RS.{{ i.pro_prize }}</h5>-->
-<!--  </div>-->
-<!--</div>-->
-
-<!--{% endfor %}-->
-<!--    </div>-->
-
-
-</body>
+{% block content %}
 {% endblock %}
-</html>
-</html>

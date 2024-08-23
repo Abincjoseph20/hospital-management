@@ -9,16 +9,17 @@
 <body>
 {% block content %}
 
-<h1 class="text-center">Make an appoinment </h1>
+<h3 class="text-center">Make an appoinment </h3>
 <hr>
 <div class="container w-50 text-center my-5">
     <div class="form-group">
-<form action="">
-    {{ form.as_p }}
-    <button type="submit" value="submit">submit</button>
-</form>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+        </form>
+    </div>
 </div>
-
 {% endblock %}
 
 </body>
